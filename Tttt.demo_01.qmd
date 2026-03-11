@@ -1,0 +1,20 @@
+---
+title: "Untitled"
+format: html
+date: 2026-03-11
+---
+```{python}
+import seaborn as sns
+sns.set_theme(style="darkgrid")
+```
+```{python}
+tips = sns.load_dataset("tips")
+tips.head()
+```
+```{python}
+g = sns.jointplot(
+    x="total_bill", y="tip", data=tips,
+                  kind="reg", truncate=False,
+                  xlim=(0, 60), ylim=(0, 12),
+                  color="m", height=7)
+```
